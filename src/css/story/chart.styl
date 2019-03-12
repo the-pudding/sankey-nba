@@ -1,0 +1,170 @@
+svg.pudding-chart
+	margin 0 auto
+	user-select none
+	visibility hidden
+	overflow hidden
+	max-height 10rem
+
+
+	+mq('bp-4')
+		visibility visible
+		max-height none
+	
+	&.show-result
+		visibility visible
+		max-height 100%
+		.node:not(.is-leaf), .link, .letter
+			display block
+		.node.is-guess rect
+			fill $wrong-med
+		.node.is-correct rect
+			fill $correct-med
+		.link.is-guess
+			fill $wrong
+		.link.is-correct
+			fill $correct
+		.letter.is-visible
+			display block
+		.letter.is-guess .text--fg
+			fill $wrong-dark
+		.letter.is-correct .text--fg
+			fill $correct-dark
+		.label
+			display block
+			&.is-guess .text-name
+				fill $wrong-dark
+			&.is-correct
+				.text-name
+					fill $correct-dark
+				.text-number
+					display block
+		.text-count.is-visible
+			+mq('bp-4')
+				display block
+	
+		
+		
+
+	&.show-tutorial
+		visibility visible
+		max-height 100%
+		.node.is-guess rect
+			fill $wrong-med
+		.node.is-correct rect
+			fill $correct-med
+		.letter.is-visible
+			display block
+		.link.is-correct
+			fill $correct
+		.letter.is-correct .text--fg
+			fill $correct-dark
+		.text-count.is-visible
+			+mq('bp-4')
+				display block
+		.label
+			&.is-correct .text-name
+				fill $correct-dark
+		
+
+	// strip of line divider
+	.node
+		display none
+		&.is-visible:not(.is-leaf)
+			display block
+		&.is-guess
+			rect
+				fill $guess-med
+		&.is-correct
+			// 
+
+		rect
+			fill lighten($gray, 20)
+	
+	
+	// the text
+	.letter
+		display none
+		&.is-visible
+			// display block
+		&.is-guess
+			display block
+			.text--fg
+				fill $guess-dark
+		
+		text
+			font-family $sans
+			font-weight 700
+			text-transform uppercase
+
+		.text--bg
+			fill none
+			stroke-width 3px
+			stroke $bg
+			stroke-opacity 0.67
+		
+		.text--fg
+			fill $gray-dark
+
+		.text-count
+			set-type-size(small)
+			display none
+			&.text--bg
+				stroke-width 2px
+
+	// path between nodes
+	.link
+		stroke none
+		display none
+		fill $gray-light
+		opacity 0.7
+		&.is-visible
+			display block
+		&.is-guess
+			fill $guess
+		&.is-correct
+			// 
+
+
+	.label
+		display none
+		
+		&.is-guess
+			display block
+
+		text
+			font-family $sans
+			font-weight 700
+			text-transform uppercase
+			set-type-size(small)
+			stroke none
+
+		.text-number
+			display none
+			font-weight 700
+			fill $gray-dark
+
+		.text-name
+			fill $guess-dark
+
+		
+	.annotation
+		.annotation-note-bg
+			cursor pointer
+			pointer-events auto
+		text
+			fill $gray-dark
+			font-weight 500
+			set-type-size(x-small)
+			text-transform uppercase
+			font-weight 700
+			+mq('bp-4')
+				set-type-size(small)
+		
+		.note-line
+			display none
+		
+		.annotation-connector
+			.connector
+				stroke $gray-dark
+				stroke-width 2px
+			

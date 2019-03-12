@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang='en' data-version='{{timestamp}}'>
+
+<head>
+
+	{{> base/meta}}
+
+	<!-- smoosh -->
+	<link rel='stylesheet' href='bundle.css' />
+	<!-- endsmoosh -->
+
+	{{> base/font}}
+
+	<!-- smoosh -->
+	<script src='critical.js'></script>
+	<!-- endsmoosh -->
+
+	{{> base/analytics }}
+
+</head>
+
+<body>
+
+	{{> base/header 'sticky'}}
+
+	<main id='content'>
+	
+		{{> story/intro }}
+	
+		<section id='prelude'>
+			<div class='prose'>
+				{{#each doc.prelude}}
+				<p>{{{value}}}</p>
+				{{/each}}
+			</div>
+		</section>
+	
+		<section id='tutorial'>
+			<div class='prose'>
+				<h3 class='prose__hed'>{{{doc.tutorialHed}}}</h3>
+				{{#each doc.tutorial}}
+				<p>{{{value}}}</p>
+				{{/each}}
+			</div>
+			<div class='tutorial__content'>
+				<figure></figure>
+			</div>
+		</section>
+		<section id='quiz'>
+			<div class='prose'>
+				<h3 class='prose__hed'>{{{doc.quizHed}}}</h3>
+				{{#each doc.quiz}}
+				<p>{{{value}}}</p>
+				{{/each}}
+			</div>
+			<div class='quiz__content'></div>
+			<div class='quiz__below'>
+				<button class='btn btn--new'>Show Me Another</button>
+				<button class='btn btn--all'>Skip To Results</button>
+			</div>
+		</section>
+		<section id='all'>
+			<div class='prose'>
+				<h3 class='prose__hed'>{{{doc.allHed}}}</h3>
+				{{#each doc.all}}
+				<p>{{{value}}}</p>
+				{{/each}}
+			</div>
+			<div class='all__content'></div>
+		</section>
+
+		<section id='tease'>
+			<div class='prose'>
+				<p>{{{doc.birthday}}}</p>
+			</div>
+		</section>
+		<section id='method'>
+			<div class='prose'>
+				<h3 class='prose__hed'>{{{doc.methodHed}}}</h3>
+				{{#each doc.method}}
+				<p>{{{value}}}</p>
+				{{/each}}
+			</div>
+		</section>
+	
+		<audio src='assets/audio/britney.mp3' class='hide-display audio--tutorial'></audio>
+		<audio class='hide-display audio--quiz'></audio>
+	
+	</main>
+
+	{{> base/footer }}
+
+
+	<script src='{{basepath}}assets/scripts/d3.v5.9.1.min.js'></script>
+	<script src='bundle.js?version={{timestamp}}' async></script>
+</body>
+
+</html>
