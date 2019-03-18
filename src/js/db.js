@@ -4,6 +4,7 @@ import '@firebase/database';
 import generateID from './generate-id';
 import checkStorage from './check-storage';
 import SWEAR from './swear';
+import PEOPLE from './people';
 
 let firebaseApp = null;
 let firebaseDB = null;
@@ -106,7 +107,7 @@ function getSubmissions(data) {
 		const hasSwear = SWEAR.find(s => g.includes(s));
 		if (hasSwear) return false;
 
-		const maxDist = Math.floor(d.length * 0.5);
+		const maxDist = Math.floor(d.length * 0.75);
 		const dist = lev(d, g);
 		const mostlyWrong = dist > maxDist;
 		if (mostlyWrong) return false;

@@ -2,19 +2,16 @@ import './pudding-chart/tree';
 import './pudding-chart/sankey';
 import db from './db';
 import generateSankeyData from './generate-sankey-data';
-import britneyData from './britney';
+// import britneyData from './britney';
 import PEOPLE from './people';
 
 const RANGE = [1, 10];
 
 PEOPLE.sort((a, b) => d3.ascending(a.id, b.id));
-// TODO remove slice
-const PEOPLE_QUEUE = PEOPLE.map(d => ({ ...d })).filter(
-	d => d.id !== 'britney'
-);
+const PEOPLE_QUEUE = PEOPLE.map(d => ({ ...d }));
 d3.shuffle(PEOPLE_QUEUE);
 
-const TUTORIAL_DATA = britneyData.filter(d => d.count > 1000).slice(0, 10);
+// const TUTORIAL_DATA = britneyData.filter(d => d.count > 1000).slice(0, 10);
 
 const SVG_VOLUME =
 	'<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-volume-2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>';
@@ -135,9 +132,9 @@ function handlePersonClick() {
 	$audioQuiz.node().play();
 }
 
-function handleBritneyClick() {
-	$audioTutorial.node().play();
-}
+// function handleBritneyClick() {
+// 	$audioTutorial.node().play();
+// }
 
 function handleNewClick() {
 	$quizContent
@@ -198,7 +195,7 @@ function handleAllClick(noscroll) {
 
 	$all.classed('is-visible', true);
 
-	allCharts = PEOPLE.filter(d => d.id !== 'britney').map(person => {
+	allCharts = PEOPLE.map(person => {
 		const { id, fullname, description } = person;
 
 		const total = d3.sum(allData[id], d => d.count);
@@ -258,7 +255,7 @@ function createQuestion(d) {
 
 	$person
 		.append('img')
-		.attr('src', `assets/images/${d.id}@2x.jpg`)
+		.attr('src', `assets/images/${d.id}@2x.png`)
 		.attr('alt', d.id);
 
 	$person.append('p').text(d.description);
@@ -444,7 +441,7 @@ function showTutorial(id) {
 
 function cleanAllData(data) {
 	rawData = data;
-	rawData.britney = TUTORIAL_DATA;
+	// rawData.britney = TUTORIAL_DATA;
 	for (const i in rawData) {
 		// sort + slice
 		const dupe = rawData[i].map(d => ({ ...d }));
@@ -460,7 +457,7 @@ function cleanAllData(data) {
 			countScaled: scaleCount(d.count),
 			name: ` ${d.name}`
 		}));
-		if (i !== 'britney') d3.shuffle(allData[i]);
+		d3.shuffle(allData[i]);
 	}
 }
 
@@ -523,7 +520,7 @@ function createTable({ id, data }) {
 function setupList() {
 	const toSort = [];
 	for (const i in rawData) {
-		if (i !== 'britney') toSort.push({ id: i, data: rawData[i] });
+		toSort.push({ id: i, data: rawData[i] });
 	}
 
 	toSort.sort((a, b) =>
@@ -536,7 +533,7 @@ function init() {
 	db.setup();
 
 	d3.json(
-		`https://pudding.cool/2019/02/sankey-data/data.json?version=${Date.now()}`
+		`https://pudding.cool/2019/03/sankey-nba-data/data.json?version=${Date.now()}`
 	)
 		.then(response => {
 			d3.select('#all .prose span').text(d3.format(',')(response.data.total));
@@ -547,12 +544,12 @@ function init() {
 				.node()
 				.addEventListener('click', handleSkipClick);
 
-			d3.select('.btn--britney')
-				.on('click', handleBritneyClick)
-				.append('span')
-				.html(SVG_VOLUME);
+			// d3.select('.btn--britney')
+			// 	.on('click', handleBritneyClick)
+			// 	.append('span')
+			// 	.html(SVG_VOLUME);
 
-			showTutorial('britney');
+			// showTutorial('britney');
 			if (db.getReturner()) handleAllClick(true);
 			else nextQuestion();
 

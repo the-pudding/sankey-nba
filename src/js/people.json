@@ -1,131 +1,122 @@
 [
   {
-    "id": "britney",
-    "description": "",
+    "id": "antetokounmpo",
+    "pos": 1,
+    "fullname": ["Giannis", "Antetokounmpo"],
+    "phonetic": "/ah-deh-toh-KOON-boh/",
+    "description": "Milwaukee Bucks",
+    "guess": "ontikecuebo"
+  },
+  {
+    "id": "dwyane",
     "pos": 0,
-    "fullname": ["britney", "spears"],
-    "guess": ""
+    "fullname": ["Dwyane", "Wade"],
+    "phonetic": "/dwain/",
+    "description": "Miami Heat",
+    "guess": "duaine"
   },
   {
-    "id": "kaepernick",
-    "description": "NFL Player",
-    "pos": 1,
-    "fullname": ["Colin", "Kaepernick"],
-    "guess": "kapernick",
-    "phonetic": "ˈkæpərnɪk"
-  },
-  {
-    "id": "picabo",
-    "description": "Former Olympic Ski Racer",
+    "id": "isaiah",
     "pos": 0,
-    "fullname": ["Picabo", "Street"],
-    "guess": "peekaboo",
-    "phonetic": "ˈpiːkəbuː"
+    "fullname": ["Isaiah", "Thomas"],
+    "phonetic": "/aye-ZAY-uh/ ",
+    "description": "Denver Nuggets",
+    "guess": "isaih"
   },
   {
-    "id": "galifianakis",
-    "description": "Actor",
+    "id": "mykhailiuk",
     "pos": 1,
-    "fullname": ["Zach", "Galifianakis"],
-    "guess": "galiphinakas",
-    "phonetic": "ˌɡælɪfəˈnækɪs"
+    "fullname": ["Svi", "Mykhailiuk"],
+    "phonetic": "/muh-KIE-luke/",
+    "description": "Detroit Pistons",
+    "guess": "macauluek"
   },
   {
-    "id": "deschanel",
-    "description": "Actress",
+    "id": "poeltl",
     "pos": 1,
-    "fullname": ["Zooey", "Deschanel"],
-    "guess": "dachanel",
-    "phonetic": "ˌdeɪʃəˈnɛl"
+    "fullname": ["Jakob", "Poeltl"],
+    "phonetic": "/PUHR-tuhl/",
+    "description": "San Antonio Spurs",
+    "guess": "peurtal"
   },
   {
-    "id": "mcconaughey",
-    "description": "Actor",
+    "id": "ntilikina",
     "pos": 1,
-    "fullname": ["Matthew", "McConaughey"],
-    "guess": "mcconaghay",
-    "phonetic": "",
-    "phonetic": "məˈkɒnəheɪ"
+    "fullname": ["Frank", "Ntilikina"],
+    "phonetic": "/Nee-Lee-Kee-Nuh/",
+    "description": "New York Knicks",
+    "guess": "nilakeena"
   },
   {
-    "id": "poehler",
-    "description": "Actress",
+    "id": "markkanen",
     "pos": 1,
-    "fullname": ["Amy", "Poehler"],
-    "guess": "poller",
-    "phonetic": "ˈpoʊlər;"
+    "fullname": ["Lauri", "Markkanen"],
+    "phonetic": "/MARK-a-nin/",
+    "description": "Chicago Bulls",
+    "guess": "markienen"
   },
   {
-    "id": "macaulay",
-    "description": "Actor",
+    "id": "mcconnell",
+    "pos": 1,
+    "fullname": ["T.J.", "McConnell"],
+    "phonetic": "/mah-CON-ell/",
+    "description": "Philadelphia 76ers",
+    "guess": "mcconnel"
+  },
+  {
+    "id": "marjanovic",
+    "pos": 1,
+    "fullname": ["Boban", "Marjanovic"],
+    "phonetic": "/Mar-YAWN-oh-vich/",
+    "description": "Philadelphia 76ers",
+    "guess": "marianovich"
+  },
+  {
+    "id": "markieff",
     "pos": 0,
-    "fullname": ["Macaulay", "Culkin"],
-    "guess": "mculley",
-    "phonetic": "məˈkɔːli"
-  },
-
-  {
-    "id": "morissette",
-    "description": "Musician",
-    "pos": 1,
-    "fullname": ["Alanis", "Morissette"],
-    "guess": "morrisette",
-    "phonetic": "ˌmɒrɪˈsɛt"
+    "fullname": ["Markieff", "Morris"],
+    "phonetic": "/mar-KEEF/",
+    "description": "Oklahoma City Thunder",
+    "guess": "markeife"
   },
   {
-    "id": "mclachlan",
-    "description": "Musician",
+    "id": "doncic",
     "pos": 1,
-    "fullname": ["Sarah", "McLachlan"],
-    "guess": "mcglaughlin",
-    "phonetic": "məˈklɒklən"
+    "fullname": ["Luka", "Doncic"],
+    "phonetic": "/DON-chitch/",
+    "description": "Dallas Mavericks",
+    "guess": "donstisch"
   },
   {
-    "id": "palahniuk",
-    "description": "Author (Fight Club)",
-    "pos": 1,
-    "fullname": ["Chuck", "Palahniuk"],
-    "guess": "palaneuk",
-    "phonetic": "ˈpɔːlənɪk"
+    "id": "kawhi",
+    "pos": 0,
+    "fullname": ["Kawhi", "Leonard"],
+    "phonetic": "/kah-WHY/",
+    "description": "Toronto Raptors",
+    "guess": "kuwai"
   },
   {
-    "id": "shyamalan",
-    "description": "Filmmaker",
+    "id": "iguodala",
     "pos": 1,
-    "fullname": ["M. Night", "Shyamalan"],
-    "guess": "shamalaughn",
-    "phonetic": "ˈʃɑːməlɑːn"
+    "fullname": ["Andre", "Iguodala"],
+    "phonetic": "/ig-wuh-DAH-luh/",
+    "description": "Golden State Warriors",
+    "guess": "igudalah"
   },
   {
-    "id": "mcgwire",
-    "description": "Former MLB Player",
+    "id": "valanciunas",
     "pos": 1,
-    "fullname": ["Mark", "McGwire"],
-    "guess": "mcguire",
-    "phonetic": ""
+    "fullname": ["Jonas", "Valanciunas"],
+    "phonetic": "/vah-lahn-CHEW-nahs/",
+    "description": "Memphis Grizzlies",
+    "guess": "valentrunis"
   },
   {
-    "id": "johansson",
-    "description": "Actress",
-    "pos": 1,
-    "fullname": ["Scarlett", "Johansson"],
-    "guess": "johanssan",
-    "phonetic": "dʒoʊˈhænsən"
-  },
-  {
-    "id": "minaj",
-    "description": "Rapper",
-    "pos": 1,
-    "fullname": ["Nicki", "Minaj"],
-    "guess": "minage",
-    "phonetic": "mɪˈnɑːʒ"
-  },
-  {
-    "id": "labeouf",
-    "description": "Actor",
-    "pos": 1,
-    "fullname": ["Shia", "LaBeouf"],
-    "guess": "labeuff",
-    "phonetic": "ˈʃaɪ.ə ləˈbʌf"
+    "id": "kentavious",
+    "pos": 0,
+    "fullname": ["Kentavious", "Caldwell-Pope"],
+    "phonetic": "/Ken-tave-ee-ous/",
+    "description": "Los Angeles Lakers",
+    "guess": "kontavious"
   }
 ]

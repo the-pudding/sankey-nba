@@ -7,7 +7,7 @@ d3.selection.prototype.puddingChartSankey = function init() {
 		const DEFAULT_WIDTH = 2;
 		const MIN_FONT_SIZE = 16;
 		const OFF_H = 144;
-		const MAX_CHARS = 'galifianakis'.length + 2;
+		const MAX_CHARS = 'antetokounmpo'.length + 1;
 
 		const margin = {
 			top: MIN_FONT_SIZE,
