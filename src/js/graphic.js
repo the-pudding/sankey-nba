@@ -8,15 +8,16 @@ import PEOPLE from './people';
 const RANGE = [1, 10];
 
 PEOPLE.sort((a, b) => d3.ascending(a.id, b.id));
-const PEOPLE_QUEUE = PEOPLE.map(d => ({ ...d }));
-d3.shuffle(PEOPLE_QUEUE);
-
-// const TUTORIAL_DATA = britneyData.filter(d => d.count > 1000).slice(0, 10);
+const PEOPLE_MAP = PEOPLE.map(d => ({ ...d }));
+d3.shuffle(PEOPLE_MAP);
+const PEOPLE_QUEUE = [
+	...PEOPLE_MAP.filter(d => d.id !== 'antetokounmpo'),
+	PEOPLE_MAP.find(d => d.id === 'antetokounmpo')
+];
 
 const SVG_VOLUME =
 	'<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-volume-2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>';
 
-const $audioTutorial = d3.select('.audio--tutorial');
 const $audioQuiz = d3.select('.audio--quiz');
 const $quiz = d3.select('#quiz');
 const $quizContent = $quiz.select('.quiz__content');
