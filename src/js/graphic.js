@@ -376,11 +376,22 @@ function showQuestion(id) {
 		.resize()
 		.render();
 
-	$question.select('.question__response input').on('keyup', handleInputChange);
+	const $input = $question.select('.question__response input');
+	$input.on('keyup', handleInputChange);
 	$question.select('.question__person button').on('click', handlePersonClick);
 	$question
 		.select('.question__response button')
 		.on('click', handleResponseClick);
+
+	// Execute a function when the user releases a key on the keyboard
+	$input.node().addEventListener('keyup', event => {
+		if (event.keyCode === 13) {
+			event.preventDefault();
+			handleResponseClick.call(
+				$question.select('.question__response button').node()
+			);
+		}
+	});
 
 	$quizContent
 		.transition()
@@ -544,12 +555,6 @@ function init() {
 				.node()
 				.addEventListener('click', handleSkipClick);
 
-			// d3.select('.btn--britney')
-			// 	.on('click', handleBritneyClick)
-			// 	.append('span')
-			// 	.html(SVG_VOLUME);
-
-			// showTutorial('britney');
 			if (db.getReturner()) handleAllClick(true);
 			else nextQuestion();
 

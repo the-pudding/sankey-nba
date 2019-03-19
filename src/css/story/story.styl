@@ -13,7 +13,7 @@ main
 	set-type-size(large, true)
 	letter-spacing 0.005em
 	+mq('bp-3')
-		text-align justify
+		// text-align justify
 
 .prose__hed
 	margin 0
@@ -147,3 +147,15 @@ button
 		
 		.correct
 			color lighten($correct-dark, 20)
+
+#bonus
+	background-color lighten($correct, 20)
+	color $correct-dark
+	max-width 25rem
+	margin 2rem auto
+	border-radius 4px
+	padding 0.5rem
+	p
+		margin 0
+		set-type-size(root, false)
+		line-height 1

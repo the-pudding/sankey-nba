@@ -23,9 +23,10 @@
 
 	{{> base/header 'sticky'}}
 
+	{{> story/intro }}
+
 	<main id='content'>
-	
-		{{> story/intro }}
+		
 	
 		<section id='prelude'>
 			<div class='prose'>
@@ -34,11 +35,19 @@
 				{{/each}}
 			</div>
 		</section>
+
+		<section id='bonus'>
+			<div class='prose'>
+				{{#each doc.bonus}}
+				<p><strong>Bonus: </strong>{{{value}}}</p>
+				{{/each}}
+			</div>
+		</section>
 	
 	
 		<section id='quiz'>
 			<div class='prose'>
-				<h3 class='prose__hed'>{{{doc.quizHed}}}</h3>
+				{{!-- <h3 class='prose__hed'>{{{doc.quizHed}}}</h3> --}}
 				{{#each doc.quiz}}
 				<p>{{{value}}}</p>
 				{{/each}}
@@ -73,7 +82,6 @@
 			</div>
 		</section>
 	
-		<audio src='assets/audio/britney.mp3' class='hide-display audio--tutorial'></audio>
 		<audio class='hide-display audio--quiz'></audio>
 	
 	</main>
