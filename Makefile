@@ -9,7 +9,7 @@ github:
 
 archive:
 	zip -r archive.zip dev
-	git add -add
+	git add -A
 	git commit -m "archive"
 	git push
 
