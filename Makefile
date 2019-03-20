@@ -9,6 +9,9 @@ github:
 
 archive:
 	zip -r archive.zip dev
+	git add -add
+	git commit -m "archive"
+	git push
 
 aws-assets:
 	aws s3 sync dist s3://pudding.cool/2019/03/nba-spelling --delete --cache-control 'max-age=31536000' --exclude 'index.html' --exclude 'bundle.js'
