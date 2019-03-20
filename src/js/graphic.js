@@ -7,7 +7,7 @@ import PEOPLE from './people';
 
 const RANGE = [1, 10];
 
-PEOPLE.sort((a, b) => d3.ascending(a.id, b.id));
+PEOPLE.sort((a, b) => d3.ascending(a.fullname[1], b.fullname[1]));
 const PEOPLE_MAP = PEOPLE.map(d => ({ ...d }));
 d3.shuffle(PEOPLE_MAP);
 const PEOPLE_QUEUE = [
@@ -196,6 +196,12 @@ function handleAllClick(noscroll) {
 
 	$all.classed('is-visible', true);
 
+	PEOPLE.sort((a, b) =>
+		d3.descending(
+			d3.sum(allData[a.id], d => d.count),
+			d3.sum(allData[b.id], d => d.count)
+		)
+	);
 	allCharts = PEOPLE.map(person => {
 		const { id, fullname, description } = person;
 
